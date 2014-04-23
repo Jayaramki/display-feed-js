@@ -22,7 +22,7 @@
 * CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 *
 * */
-function loadFeed(url, element, num = null) {
+function loadFeed(url, element, num = null, enableContent = false) {
     google.load("feeds", "1");
 
     function initialize() {
@@ -38,28 +38,29 @@ function loadFeed(url, element, num = null) {
                 //Feed title Section
                 var feedTitle = document.createElement('h2');
                 //use ".feed_title"  in css to style Title of the Feed
-                feedTitle.class = 'feed_title';
+                feedTitle.className = 'feed_title';
                 feedTitle.innerHTML = result.feed.title;
                 container.appendChild(feedTitle);
 
                 //Feed Entries section
                 for (var i = 0; i < result.feed.entries.length; i++) {
                     var entry = result.feed.entries[i];
-                    var post = document.createElement('h3');
                     var postTitle = document.createElement("a");
-                    postTitle.class = 'post_title';
                     //use ".post_title"  in css to style Title of the Post
+                    postTitle.className = 'post_title';
                     postTitle.href = entry.link;
                     postTitle.appendChild(document.createTextNode(entry.title));
-                    post.appendChild(postTitle);
-
-                    //Feed Content Snippet section
-                    var content = document.createElement('div');
-                    //use ".post_content"  in css to style Title of the Post
-                    content.class = 'post_content';
-                    content.innerHTML = entry.contentSnippet;
-                    container.appendChild(post);
-                    container.appendChild(content);
+                    postTitle.appendChild(document.createElement('br'));
+                    container.appendChild(postTitle);
+                    //alert(content);
+                    if (enableContent) {
+                        //Feed Content Snippet section
+                        var content = document.createElement('div');
+                        //use ".post_content"  in css to style Title of the Post
+                        content.className = 'post_content';
+                        content.innerHTML = entry.contentSnippet;
+                        container.appendChild(content);
+                    }
                 }
             }
         });
