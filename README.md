@@ -1,11 +1,12 @@
 display-feed-js
 ===============
 
+This plugin used to display RSS feed links dynamically in your html page. In this plugin we are using [google Api](https://www.google.com/jsapi) get Feed from url.
 
-Display Feed using Javascript
-*****************************
+DEMO
+====
 
-This plugin contains plain javascript. And provided key to control number of feed entries for each feed.
+You can see live DEMO from my [blog](http://cj-ramki.blogspot.in/p/feeds-sample.html).
 
 Features
 ========
