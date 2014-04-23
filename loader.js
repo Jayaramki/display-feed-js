@@ -6,15 +6,31 @@ function loadFeed(url, element){
       feed.load(function(result) {
         if (!result.error) {
           var container = document.getElementById(element);
+          
+          //Feed title Section
+          var feedTitle = document.createElement('h2');
+          //use ".feed_title"  in css to style Title of the Feed
+          feedTitle.class = 'feed_title';				
+          feedTitle.innerHTML = result.feed.title;
+          container.appendChild(feedTitle);
+          
+          //Feed Entries section
           for (var i = 0; i < result.feed.entries.length; i++) {
             var entry = result.feed.entries[i];
-            var div = document.createElement("a");
-            div.href = entry.link; 
-            div.appendChild(document.createElement('br'));
-            div.appendChild(document.createTextNode(entry.title));
-            var content = document.createElement('div')
+            var post = document.createElement('h3');
+            post.class = 'post_title';
+            var postTitle = document.createElement("a");
+            //use ".post_title"  in css to style Title of the Post
+            postTitle.href = entry.link; 
+            postTitle.appendChild(document.createTextNode(entry.title));
+            post.appendChild(postTitle);
+            
+            //Feed Content Snippet section
+            var content = document.createElement('div');
+            //use ".post_content"  in css to style Title of the Post
+            content.class = 'post_content';
             content.innerHTML = entry.contentSnippet;
-            container.appendChild(div);
+            container.appendChild(post);
             container.appendChild(content);
           }
         }
