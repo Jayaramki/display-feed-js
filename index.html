@@ -1,14 +1,14 @@
 <html>
   <head>
+  <!--if you load this below "jsapi" from local, please comment this below line. Else leave it... -->
     <script type="text/javascript" src="https://www.google.com/jsapi"></script>
-		loadFeed('http://shahshreya30.wordpress.com/feed/','feed');
-		loadFeed('http://chillydraji.wordpress.com/feed/','feed2');
     <script type="text/javascript">
-    </script>
+    	loadFeed('http://cj-ramki.blogspot.in/feeds/posts/default?alt=rss','feed1');
+	loadFeed('http://chillydraji.wordpress.com/feed/','feed2');
+     </script>
   </head>
   <body>
-    <div id="feed"><b>Shreya's story....</b></div>
-    <br>
-    <div id="feed2"><b>Silly mistakes of chilly programmers by DRaji</b></div>
+    <div id="feed"></div>
+    <div id="feed2"></div>
   </body>
 </html>
