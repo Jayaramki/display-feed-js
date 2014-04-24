@@ -26,7 +26,7 @@ Code Usage
 in javascript, call ```loadFeed()``` method.
 
 **Syntax:**
-```
+```js
 loadFeed(url,element,num=null,enableContent=false);
 ```
 **Parameters definition :**
@@ -47,7 +47,7 @@ loadFeed('http://cj-ramki.blogspot.in/feeds/posts/default?alt=rss','feed1',null,
 
 in html,
 
-```
+```html
 <div id='feed1'></div>
 ```
 is enough.
@@ -55,12 +55,12 @@ is enough.
 **To include more Feeds in single page**
 
 in javascript,
-```
+```js
 loadFeed('http://cj-ramki.blogspot.in/feeds/posts/default?alt=rss','feed1',10,false);
 loadFeed('http://chillydraji.wordpress.com/feed/','feed2',null,true);
 ```
 in HTML
-```
+```html
 <div id="feed1"></div>
 <div id="feed2"></div>
 ```
@@ -68,7 +68,7 @@ in HTML
 Styling Guide
 =============
 
-In this plugin, We are separated each feed into three sections. 
+In this plugin, We are separated each feed into three sections.
 1. Feed Title.
 2. Post Title
 3. Post Content snippet

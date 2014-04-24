@@ -22,7 +22,11 @@
 * CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 *
 * */
-function loadFeed(url, element, num = null, enableContent = false) {
+function loadFeed(url, element, num, enableContent) {
+
+    num = num || null;
+    enableContent = enableContent || false;
+
     google.load("feeds", "1");
 
     function initialize() {
