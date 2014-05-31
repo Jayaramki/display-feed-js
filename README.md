@@ -1,7 +1,7 @@
 display-feed-js
 ===============
 
-This plugin used to display RSS feed links dynamically in your html page. In this plugin we are using [google Api](https://www.google.com/jsapi) get Feed from url.
+This plugin used to display RSS and ATOM Feed links dynamically in your html page. In this plugin we are using [google Api](https://www.google.com/jsapi) get Feed from url.
 ***
 
 DEMO
