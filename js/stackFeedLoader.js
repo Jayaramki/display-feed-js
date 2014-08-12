@@ -1,4 +1,4 @@
-/**
+  /**
 * CJ Ramki
 * Access the CJ Ramki contents from JavaScript side.
 *
@@ -38,18 +38,20 @@ function loadFeed(url, element, num, enableContent) {
         feed.load(function (result) {
             if (!result.error) {
                 var container = document.getElementById(element);
+                var ulNode = document.createElement('ul');
 
                 //Feed Entries section
                 for (var i = 0; i < result.feed.entries.length; i++) {
                     var entry = result.feed.entries[i];
+                    var liNode = document.createElement('li');
                     var postTitle = document.createElement("a");
                     //use ".post_title"  in css to style Title of the Post
                     postTitle.className = 'post_title';
                     postTitle.href = entry.link;
-                    postTitle.appendChild(document.createTextNode(entry.title.split('on')[1]));
-                    postTitle.appendChild(document.createElement('br'));
-                    postTitle.appendChild(document.createElement('hr'));
-                    container.appendChild(postTitle);
+                    postTitle.appendChild(document.createTextNode(entry.title.split('on ')[1]));
+                    liNode.appendChild(postTitle);
+                    ulNode.appendChild(liNode);
+                    container.appendChild(ulNode);
                     //alert(content);
                     if (enableContent) {
                         //Feed Content Snippet section
