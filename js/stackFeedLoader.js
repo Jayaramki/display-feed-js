@@ -48,7 +48,7 @@ function loadFeed(url, element, num, enableContent) {
                     postTitle.href = entry.link;
                     postTitle.appendChild(document.createTextNode(entry.title.split('on')[1]));
                     postTitle.appendChild(document.createElement('br'));
-                    postTitle.appendChild(document.createElement('br'));
+                    postTitle.appendChild(document.createElement('hr'));
                     container.appendChild(postTitle);
                     //alert(content);
                     if (enableContent) {
